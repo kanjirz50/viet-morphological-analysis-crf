@@ -1,3 +1,7 @@
+# CRF model / iob2 tagged file
+*.model
+*.iob2
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
