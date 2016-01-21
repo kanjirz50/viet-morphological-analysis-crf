@@ -3,12 +3,10 @@
 
 import subprocess
 
-m_path = "./test_crfmodel.model"
-
 class CRF_PP:
-    def __init__(self):
+    def __init__(self, model_file_path):
         """Initialize CRF"""
-        self.crf_model_path = m_path
+        self.crf_model_path = model_file_path
         self.cmd = ('crf_test', '-m', self.crf_model_path)
 
     def analyze(self, sentence):
@@ -32,7 +30,7 @@ class CRF_PP:
 
 def main():
     """Usage"""
-    crf_p = CRF_PP()
+    crf_p = CRF_PP("./test_crfmodel.model")
 
     sentences = (
         "Cách đây dúng 1 tháng , Liverpool ngậm ngùi nhìn M.U lấy 3 điểm ở PL sau khi dể lọt lưới ở phút bù giờ sau pha đánh đầu của trung vệ Rio Ferdinand , thất bại khiến .",
