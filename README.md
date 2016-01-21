@@ -41,6 +41,9 @@ Training with CRF++
 % crf_learn ./crf_template ./vnPOS.iob2 ./vnPOS.crfpp.model
 ```
 
+"crf_template" is a feature template files.
+You can change features.
+
 ## Usage
 
 ```python
