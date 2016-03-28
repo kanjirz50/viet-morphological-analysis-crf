@@ -5,6 +5,19 @@ Vietnamese morphological analysis with using CRF
 ## Requirements
 * Python 2
 * [CRF++ 0.58](https://taku910.github.io/crfpp/)
+* [model file](https://drive.google.com/open?id=0BxSyNdemluFBcmdqRjk0OWo2eE0)
+
+## Usage
+Please download [model file](https://drive.google.com/open?id=0BxSyNdemluFBcmdqRjk0OWo2eE0) to ./path/to/model_file
+
+```python
+from crfpp import CRF_PP
+
+viet_morph_analyzer = CRF_PP('/path/to/model_file')
+
+sentence = 'Số điện thoại của trường'
+result = viet_morph_analyzer.analyze(sentence)
+```
 
 ## How to make model file
 
@@ -26,10 +39,10 @@ Change format to IOB2 tag format.(Use only I tag and B tag.)
 % cat vnPOS.txt | python ./utils/vnPOS_to_iob2.py > vnPOS.iob2
 # Output likes below one.
 Tấp		B-JJ
-nập		I_JJ 
-sắm		B-VB 
-đtdđ	B-NN 
-đầu		B-NN 
+nập		I_JJ
+sắm		B-VB
+đtdđ	B-NN
+đầu		B-NN
 năm		B-NC
 
 ...
@@ -43,14 +56,3 @@ Training with CRF++
 
 "crf_template" is a feature template files.
 You can change features.
-
-## Usage
-
-```python
-from crfpp import CRF_PP
-
-viet_morph_analyzer = CRF_PP('/path/to/model_file')
-
-sentence = 'Số điện thoại của trường'
-result = viet_morph_analyzer.analyze(sentence)
-```
